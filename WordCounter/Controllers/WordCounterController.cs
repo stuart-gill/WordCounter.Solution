@@ -4,23 +4,19 @@ using System.Collections.Generic;
 
 namespace WordCounter.Controllers
 {
-  public class WordCounterController : Controller
-  {
-    [HttpGet("/wordcounter/new")]
-    public ActionResult New()
+    public class WordCounterController : Controller
     {
-    return View();
+      [HttpGet("/wordcounter/new")]
+      public ActionResult New()
+        {
+        return View();
+        }
+
+      [HttpPost("/wordcounter")]
+      public ActionResult Create(string sentence, string word)
+        {
+          WordCounterClass myWordCounterClass = new WordCounterClass(sentence, word);
+          return View("Index", myWordCounterClass);
+        }
     }
-
-
-
-    [HttpPost("/wordcounter")]
-    public ActionResult Create(string sentence, string word)
-    {
-      WordCounterClass myWordCounterClass = new WordCounterClass(sentence, word);
-      return View("Index", myWordCounterClass);
-    }
-
-
-  }
 }

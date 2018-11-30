@@ -6,8 +6,6 @@ using System.Linq;
  
 namespace WordCounter.Tests
 {
-
- 
   [TestClass]
   public class WordCounterClassTest
   {

@@ -22,10 +22,6 @@ A C# program to check how many times a user entered word appears in a user enter
 
 ### Setup
 
-Follow this link: https://stuart-gill.github.io/word-counter-csharp (currently a dead link, will be updated once front end is built)
-
-OR:
-
 Download .NET Core 2.1.3 SDK and .NET Core Runtime 2.0.9 and install them. Download Mono and install it.
 
 Clone this repository: $ git clone repo name
