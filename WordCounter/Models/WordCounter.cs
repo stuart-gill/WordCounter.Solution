@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using WordCounter;
 
 namespace WordCounter.Models
@@ -10,13 +9,15 @@ namespace WordCounter.Models
     
     {
     private string _sentence;
+    private string _word;
     public List<string> stringList;
 
     
     
-    public WordCounterClass (string sentence)
+    public WordCounterClass (string sentence, string word)
     {
       _sentence = sentence;
+      _word = word;
     }
 
     public string GetSentence()
@@ -24,19 +25,31 @@ namespace WordCounter.Models
       return _sentence;
     }
 
-    public void SetSentence(string newSentence)
+    public string GetWord()
     {
-      _sentence = newSentence;
+        return _word;
     }
 
-    public int CountWordInSentence(string targetWord)
+    public void SetSentence(string sentence)
+    {
+      _sentence = sentence;
+    }
+
+    public void SetWord(string word)
+    {
+        _word = word;
+    }
+
+    public int CountWordInSentence(string sentence, string targetWord)
     {
        int counter; 
-       counter = 0;      
+       counter = 0;
+       _sentence = sentence;
+       _word = targetWord;      
        stringList = _sentence.Split().ToList();
        foreach(string word in stringList)
        {
-         if (word == targetWord)
+         if (word == _word)
          {
            counter+=1;
          }
@@ -53,6 +66,7 @@ namespace WordCounter.Models
 
      public bool IsSentence(string sentence)
      {
+        _sentence = sentence;
        stringList = _sentence.Split().ToList();
        foreach(string word in stringList)
        {

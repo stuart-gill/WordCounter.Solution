@@ -1,7 +1,8 @@
 @{
   Layout = "_Layout";
 }
-
+<div class="container">
 <h1>Word Counter</h1>
-<h3>Your word appears X times in your sentence</h3>
+<h3>Your word @Model.GetWord() appears X times in the sentence @Model.GetSentence()</h3>
 <h3><a href='/wordcounter/new'>New Search</a></h3>
+</div>
