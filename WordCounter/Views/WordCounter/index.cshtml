@@ -7,11 +7,11 @@
 
 @if (Model.CountWordInSentence()==0)
 {
-  <h3>Your word @Model.GetWord() appears 0 times in your sentence: " @Model.GetSentence() "</h3>
+  <h3>Your word "@Model.GetWord()" appears 0 times in your sentence: "@Model.GetSentence()"</h3>
 }
 else 
 {
-  <h3>Your word @Model.GetWord() appears @Model.CountWordInSentence() times in your sentence: " @Model.GetSentence() "</h3>
+  <h3>Your word "@Model.GetWord()" appears @Model.CountWordInSentence() times in your sentence: "@Model.GetSentence()"</h3>
 }
 
 <h3><a href='/wordcounter/new'>New Search</a></h3>
