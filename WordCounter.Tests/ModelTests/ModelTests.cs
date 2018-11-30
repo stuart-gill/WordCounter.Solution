@@ -65,9 +65,9 @@ namespace WordCounter.Tests
     {
       string testWord = "tarfle";
       string testSentence = "barfle snarfle tarfle darfle tarfle";
-      WordCounterClass newWordCounterClass = new WordCounterClass(testSentence, "testword");
-      newWordCounterClass.CountWordInSentence(testWord);
-      int result = newWordCounterClass.CountWordInSentence(testWord);
+      WordCounterClass newWordCounterClass = new WordCounterClass(testSentence, testWord);
+      newWordCounterClass.CountWordInSentence(testSentence, testWord);
+      int result = newWordCounterClass.CountWordInSentence(testSentence, testWord);
       Assert.AreEqual(2, result);
     }
   }
