@@ -14,7 +14,7 @@ namespace WordCounter.Tests
     [TestMethod]
     public void WordCounterConstructor_CreatesInstanceofWordCounter_WordCounter()
     {
-      WordCounterClass newWordCounterClass = new WordCounterClass("test sentence");
+      WordCounterClass newWordCounterClass = new WordCounterClass("test sentence", "testword");
       Assert.AreEqual(typeof(WordCounterClass), newWordCounterClass.GetType());
     }
 
@@ -22,7 +22,7 @@ namespace WordCounter.Tests
     public void GetSentence_ReturnsSentence_String()
     {
       string testSentence = "Snarfle Darfle";
-      WordCounterClass newWordCounterClass = new WordCounterClass(testSentence);
+      WordCounterClass newWordCounterClass = new WordCounterClass(testSentence, "testword");
       string result = newWordCounterClass.GetSentence();
       Assert.AreEqual(testSentence, result);
     }
@@ -31,7 +31,7 @@ namespace WordCounter.Tests
     public void SetSentence_SetsSentence_String()
     {
       string testSentence = "Barfle Snarfle";
-      WordCounterClass newWordCounterClass = new WordCounterClass(testSentence);
+      WordCounterClass newWordCounterClass = new WordCounterClass(testSentence, "testword");
       string updatedTestSentence = "Snarfle Barfle";
       newWordCounterClass.SetSentence(updatedTestSentence);
       string result = newWordCounterClass.GetSentence();
@@ -43,7 +43,7 @@ namespace WordCounter.Tests
     {
 
       string testSentence = "sentence contains nonalphabetic characters dd44dd" ;
-      WordCounterClass newWordCounterClass = new WordCounterClass(testSentence);
+      WordCounterClass newWordCounterClass = new WordCounterClass(testSentence, "testword");
       newWordCounterClass.IsSentence(testSentence);
       bool result = newWordCounterClass.IsSentence(testSentence);
       Assert.AreEqual(false, result);
@@ -53,7 +53,7 @@ namespace WordCounter.Tests
     public void SentenceToLowerCase_ChecksForLowerCase_Bool()
     {
       string testSentence = "This Sentence Has Upper Case Letters";
-      WordCounterClass newWordCounterClass = new WordCounterClass(testSentence);
+      WordCounterClass newWordCounterClass = new WordCounterClass(testSentence, "testword");
       newWordCounterClass.SentenceToLowerCase(testSentence);
       string resultingSentence = newWordCounterClass.SentenceToLowerCase(testSentence);
       bool result = resultingSentence.Any(char.IsUpper);
@@ -65,7 +65,7 @@ namespace WordCounter.Tests
     {
       string testWord = "tarfle";
       string testSentence = "barfle snarfle tarfle darfle tarfle";
-      WordCounterClass newWordCounterClass = new WordCounterClass(testSentence);
+      WordCounterClass newWordCounterClass = new WordCounterClass(testSentence, "testword");
       newWordCounterClass.CountWordInSentence(testWord);
       int result = newWordCounterClass.CountWordInSentence(testWord);
       Assert.AreEqual(2, result);
