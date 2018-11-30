@@ -6,8 +6,8 @@ namespace WordCounter.Controllers
 {
   public class WordCounterController : Controller
   {
-      [HttpGet("/wordcounter")]
-    public ActionResult Index()
+    [HttpGet("/wordcounter/new")]
+    public ActionResult New()
     {
     return View();
     }
@@ -18,7 +18,9 @@ namespace WordCounter.Controllers
     public ActionResult Create(string sentence, string word)
     {
       WordCounterClass myWordCounterClass = new WordCounterClass(sentence, word);
-      return RedirectToAction("Index");
+      return View("Index", myWordCounterClass);
     }
+
+
   }
 }

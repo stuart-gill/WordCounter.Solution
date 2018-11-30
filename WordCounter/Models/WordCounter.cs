@@ -40,12 +40,10 @@ namespace WordCounter.Models
         _word = word;
     }
 
-    public int CountWordInSentence(string sentence, string targetWord)
+    public int CountWordInSentence()
     {
        int counter; 
-       counter = 0;
-       _sentence = sentence;
-       _word = targetWord;      
+       counter = 0; 
        stringList = _sentence.Split().ToList();
        foreach(string word in stringList)
        {
@@ -66,7 +64,6 @@ namespace WordCounter.Models
 
      public bool IsSentence(string sentence)
      {
-        _sentence = sentence;
        stringList = _sentence.Split().ToList();
        foreach(string word in stringList)
        {
