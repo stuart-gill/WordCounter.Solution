@@ -44,10 +44,10 @@ namespace WordCounter.Models
         {
           int counter; 
           counter = 0; 
-          stringList = _sentence.Split().ToList();
+          stringList = _sentence.ToLower().Split().ToList();
           foreach(string word in stringList)
           {
-            if (word == _word)
+            if (word == _word.ToLower())
             {
               counter+=1;
             }
@@ -55,30 +55,47 @@ namespace WordCounter.Models
           return counter;
         }
 
-      public string SentenceToLowerCase(string sentence)
+      public bool IsWord()
+      {
+        stringList = _word.Split().ToList();
+        if (_word == null)
         {
-          string lowerCaseSentence;
-          lowerCaseSentence = sentence.ToLower();
-          return lowerCaseSentence;
+          return false;
         }
-
-      public bool IsSentence(string sentence)
+        else if (stringList.Count > 1)
         {
-          stringList = _sentence.Split().ToList();
-          foreach(string word in stringList)
+          return false;
+        }
+        else
+        {
+          return true;
+        }
+      }
+
+      public bool IsSentence()
+        {
+          if (_sentence == null)
           {
-            char[] characters = word.ToCharArray();
-            foreach(char letter in characters)
+            return false;
+          }
+          else
+          {
+            stringList = _sentence.Split().ToList();
+            foreach(string word in stringList)
             {
-              bool result;
-              result = Char.IsLetter(letter);
-              if (result == false)
+              char[] characters = word.ToCharArray();
+              foreach(char letter in characters)
               {
-                return false;
+                bool result;
+                result = Char.IsLetter(letter);
+                if (result == false)
+                {
+                  return false;
+                }
               }
             }
+            return true;
           }
-          return true;
         }
     }
 }

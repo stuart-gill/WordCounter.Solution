@@ -28,7 +28,7 @@ Clone this repository: $ git clone repo name
 Change into the work directory:: $ cd WordCounter.Solution
 To edit the project, open the project in your preferred text editor.
 
-To run the program, first navigate to the location of the WordCounter.cs file then compile and execute: $ cd WordCounter/Models $ mcs WordCounter.cs; mono WordCounter.exe;
+To run the program, first navigate to WordCounter.Solution/WordCounter and then type dotnet restore in terminal, then dotnet build, then dotnet run. Then navigate in your browser to the URL listed in your terminal. 
 
 To run the tests, use these commands: $ cd WordCounter.Tests $ dotnet test 
 

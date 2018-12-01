@@ -5,6 +5,12 @@
 <div class="container">
 <h1>Word Counter</h1>
 
+@if (Model.IsSentence()==false || Model.IsWord()==false)
+{
+  <h3>Please make sure your enter a sentence and a single word with no punctuation or numbers.</h3>
+}
+else
+{ 
 @if (Model.CountWordInSentence()==0)
   {
     <h3>Your word "@Model.GetWord()" does not appear in your sentence: "@Model.GetSentence()"</h3>
@@ -14,6 +20,7 @@ else
   {
     <h3>Your word "@Model.GetWord()" appears @Model.CountWordInSentence() times in your sentence: "@Model.GetSentence()"</h3>
   }
+}
 
 <h3><a href='/wordcounter/new'>New Search</a></h3>
 </div>

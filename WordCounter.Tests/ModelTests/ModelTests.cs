@@ -42,19 +42,8 @@ namespace WordCounter.Tests
 
       string testSentence = "sentence contains nonalphabetic characters dd44dd" ;
       WordCounterClass newWordCounterClass = new WordCounterClass(testSentence, "testword");
-      newWordCounterClass.IsSentence(testSentence);
-      bool result = newWordCounterClass.IsSentence(testSentence);
-      Assert.AreEqual(false, result);
-    }
-
-    [TestMethod]
-    public void SentenceToLowerCase_ChecksForLowerCase_Bool()
-    {
-      string testSentence = "This Sentence Has Upper Case Letters";
-      WordCounterClass newWordCounterClass = new WordCounterClass(testSentence, "testword");
-      newWordCounterClass.SentenceToLowerCase(testSentence);
-      string resultingSentence = newWordCounterClass.SentenceToLowerCase(testSentence);
-      bool result = resultingSentence.Any(char.IsUpper);
+      newWordCounterClass.IsSentence();
+      bool result = newWordCounterClass.IsSentence();
       Assert.AreEqual(false, result);
     }
 
@@ -64,8 +53,8 @@ namespace WordCounter.Tests
       string testWord = "tarfle";
       string testSentence = "barfle snarfle tarfle darfle tarfle";
       WordCounterClass newWordCounterClass = new WordCounterClass(testSentence, testWord);
-      newWordCounterClass.CountWordInSentence(testSentence, testWord);
-      int result = newWordCounterClass.CountWordInSentence(testSentence, testWord);
+      newWordCounterClass.CountWordInSentence();
+      int result = newWordCounterClass.CountWordInSentence();
       Assert.AreEqual(2, result);
     }
   }
